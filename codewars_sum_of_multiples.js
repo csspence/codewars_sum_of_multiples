@@ -12,6 +12,19 @@ sumMul(4, 123) ==> 4 + 8 + 12 + ... = 1860
 sumMul(4, -7)  ==> "INVALID"
 */
 
-function sumMul(n,m){
-//your idea here
+const sumMul = (n,m) => {
+  const multiples = [];
+  let sum = 0;
+  if(n < 0 || m < 0 || n === 0 || m === 0) {
+    return 'INVALID';
+  }
+  for(let i = 2; i < m; i++) {
+    if(i % n === 0) {
+      multiples.push(i);
+    } 
+  }
+  for(let i = 0; i < multiples.length; i++) {
+    sum += multiples[i];
+  }
+  return sum;
 }
